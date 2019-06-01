@@ -4,26 +4,17 @@
 from __future__ import absolute_import, division, print_function
 
 import os.path as osp
-import time
-# import click
-import cv2
 import numpy as np
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 import yaml
 from addict import Dict
 from data.data import grantXdatasetGene
 from data.dataForClassify import grantXdatasetForClassify
 from model.fusenet import FuseNet
-from data.data import writeShape
-import shapefile
-from pyproj import Proj, transform
-import random
 import gdal
 import time
 import os
-import json
 import pandas
 from collections import OrderedDict
 from os.path import join
@@ -395,14 +386,14 @@ def main():
         model.to(device)
 
         if CONFIG.FUSEMODE != "earlyFuse":
-            resnet1path = join(CONFIG.SAVE_DIR.replace(CONFIG.EXPERIENT, 'res50_size30_ce_aug_crs_balance_epoch500'),
+            resnet1path = join(CONFIG.SAVE_DIR.replace(CONFIG.EXPERIENT, 'rgbBranch'),
                                str(i))
             resnet2path = join(CONFIG.SAVE_DIR.replace(CONFIG.EXPERIENT,
-                                                       'new_res50_size30_LiDAR_normalize_ce_aug_crs_balance_epoch500'),
+                                                       'ndnBranch'),
                                str(i))
             new_state_dict = OrderedDict()
-            state_dict_res2 = torch.load(join(resnet2path, "highAcc_net_xgrant_classification_res50_resnet2.pth"))
-            state_dict_res1 = torch.load(join(resnet1path, "highAcc_net_xgrant_classification_res50_resnet1.pth"))
+            state_dict_res2 = torch.load(join(resnet2path, "highAcc_net_xgrant_classification_res50_resnet.pth"))
+            state_dict_res1 = torch.load(join(resnet1path, "highAcc_net_xgrant_classification_res50_resnet.pth"))
             for key, item in state_dict_res1.items():
                 new_state_dict['resnet1.' + key] = item
             for key, item in state_dict_res2.items():

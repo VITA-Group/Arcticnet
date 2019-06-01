@@ -4,8 +4,6 @@ import os.path as osp
 from pyproj import Proj, transform
 import numpy as np
 import cv2
-from matplotlib import pyplot as plt
-import json
 import random
 
 

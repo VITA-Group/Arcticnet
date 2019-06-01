@@ -4,26 +4,17 @@
 from __future__ import absolute_import, division, print_function
 
 import os.path as osp
-import time
-# import click
-import cv2
 import numpy as np
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 import yaml
 from addict import Dict
 from data.data import grantXdatasetGene
 from data.dataForClassify import grantXdatasetForClassify
 from model.fusenet import FuseNet
-from data.data import writeShape
-import shapefile
-from pyproj import Proj, transform
-import random
 import gdal
 import time
 import os
-import json
 import pandas
 from os.path import join
 

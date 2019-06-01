@@ -14,10 +14,10 @@ POLY_POWER: 4
 WEIGHT_DECAY: 2.0e-5
 MOMENTUM: 0.5
 
-FUSEMODE: midFuse_layer3
+FUSEMODE: lateFuse
 # lateFuse, midFuse_layer2, midFuse_layer3 or earlyFuse
-EXPERIENT: try_fusenet_midFuse_layer3
+EXPERIENT: fusenet_lateFuse
 NUM_WORKERS: 4
 
-TESTON: False
+TESTON: True
 MAPGENEON: False

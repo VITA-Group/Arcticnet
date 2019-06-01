@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import math
 from .resnet import resnet50
 from .resnet import Bottleneck
 
@@ -65,6 +64,9 @@ class FuseNet_early(nn.Module):
         self.resnet = resnet50(num_classes=num_classes, pretrained=True, in_channel=6)
 
     def forward(self, image1, image2):
+
+        # normalize image1
+        image1 = (image1 - 2000)/3000
 
         x = self.resnet(torch.cat([image1, image2], 1))
 
