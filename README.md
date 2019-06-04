@@ -14,7 +14,12 @@ Published at CVPR 2019 Detecting Objects in Aerial Images Workshop
 If you find the code useful for your work, please consider citing
 
 ```
-
+@article{jiang2019arcticnet,
+  title={ArcticNet: A Deep Learning Solution to Classify Arctic Wetlands},
+  author={Jiang, Ziyu and Von Ness, Kate and Loisel, Julie and Wang, Zhangyang},
+  journal={arXiv preprint arXiv:1906.00133},
+  year={2019}
+}
 ``` 
 
 Our dataset and trained model can be found [here](https://drive.google.com/drive/folders/1U_0J_gYkHQ6AdXOi98QxxBZ5nhcBDTrJ?usp=sharing).
